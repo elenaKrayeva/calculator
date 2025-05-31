@@ -62,3 +62,4 @@ project-root/
 ├── webpack.config.js      # Webpack build configuration
 └── README.md              # Project documentation
 
+```

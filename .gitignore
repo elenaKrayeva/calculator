@@ -1,20 +1,36 @@
+# Node modules
+node_modules/
 
-node_modules
+# Production build
+dist/
+build/
 
-dist
-build
-
+# System files
 .DS_Store
 Thumbs.db
 
-.idea
-.vscode
+# IDE files
+.idea/
+.vscode/
 
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Husky internal files
 .husky/_
 
+# Swap files (vim, etc.)
 *.swp
+*.swo
 
+# Mac OS specific
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Desktop.ini
+
+# Optional backup files
+*~
