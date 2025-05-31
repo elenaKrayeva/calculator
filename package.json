@@ -11,7 +11,7 @@
     "format": "prettier . --write",
     "prepare": "husky",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --branch gh-pages --clean --message 'Deploy production build'"
+    "deploy": "gh-pages -d dist --branch gh-pages --message 'Deploy production build'"
   },
   "keywords": [],
   "author": "me",
