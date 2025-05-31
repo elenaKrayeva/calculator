@@ -29,6 +29,10 @@ export default {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -37,7 +41,7 @@ export default {
     }),
   ],
   devServer: {
-    static: './dist',
+    static: './public',
     open: true,
     hot: true,
   },

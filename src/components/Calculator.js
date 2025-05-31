@@ -1,4 +1,5 @@
 import { calculate, changeSign } from '../core/calculate.js';
+import { themes } from '../themes/theme.js';
 
 export function createCalculator() {
   const container = document.createElement('div');
@@ -102,6 +103,9 @@ export function createCalculator() {
 }
 
 function createWindowButtons(container) {
+  const topBar = document.createElement('div');
+  topBar.className = 'top-bar';
+
   const windowButtons = document.createElement('div');
   windowButtons.className = 'window-buttons';
 
@@ -111,7 +115,16 @@ function createWindowButtons(container) {
     windowButtons.appendChild(circle);
   });
 
-  container.appendChild(windowButtons);
+  topBar.appendChild(windowButtons);
+
+  const themeButton = document.createElement('button');
+  themeButton.textContent = '🎨';
+  themeButton.className = 'theme-button';
+  themeButton.addEventListener('click', () => openThemeMenu(container));
+
+  topBar.appendChild(themeButton);
+
+  container.appendChild(topBar);
 }
 
 function createDisplay(container) {
@@ -131,5 +144,49 @@ function applyButtonClass(btn, text) {
   }
   if (text === '0') {
     btn.classList.add('zero');
+  }
+}
+
+function openThemeMenu(container) {
+  let existingMenu = document.querySelector('.theme-menu');
+  if (existingMenu) {
+    existingMenu.remove();
+    return;
+  }
+
+  const menu = document.createElement('div');
+  menu.className = 'theme-menu';
+
+  themes.forEach(theme => {
+    const option = document.createElement('div');
+    option.className = 'theme-option';
+  
+    const caption = document.createElement('div');
+    caption.textContent = theme.name;
+  
+    const preview = document.createElement('img');
+    preview.src = theme.preview;
+    preview.alt = `${theme.name} preview`;
+    preview.className = 'theme-preview';
+  
+    option.appendChild(caption);
+    option.appendChild(preview);
+  
+    option.addEventListener('click', () => {
+      applyTheme(theme.id);
+      menu.remove(); 
+    });
+  
+    menu.appendChild(option);
+  });
+  
+
+  container.appendChild(menu);
+}
+
+function applyTheme(themeId) {
+  document.body.className = '';
+  if (themeId) {
+    document.body.classList.add(themeId);
   }
 }
