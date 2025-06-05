@@ -48,8 +48,8 @@ project-root/
 │   ├── index.js           # Application entry point
 │   ├── assets/            # Static assets and images
 │   │   └── themes/        # Theme previews (default.jpg, blue.jpg, retro.jpg, neon.jpg)
-│   ├── components/               # UI component modules
-│   │   └── Calculator/           # All calculator-related components
+|   |   └── styles.css     # Main application stylesheet: calculator layout, button styles, and theme switching
+│   ├── components/               # All calculator-related components       
 │   │       ├── Buttons.js        # Creates calculator buttons and handles click bindings
 │   │       ├── Calculator.js     # Main calculator container combining all modules
 │   │       ├── Display.js        # Display component for showing input and results
@@ -58,9 +58,9 @@ project-root/
 │   │       ├── ThemeApply.js     # Logic for applying selected theme to document body
 │   │       ├── ThemeMenu.js      # Theme selection menu with preview thumbnails
 │   │       └── WindowButtons.js  # Decorative window control buttons (red/yellow/green + theme button)
-│   ├── core/              
+│   ├── core/
 │   │   └── calculate.js  # Calculation logic
-│   └── themes/            
+│   └── themes/
 │       └── theme.js      # Theme definitions
 │
 ├── .husky/                # Husky pre-commit hooks running ESLint before commit
