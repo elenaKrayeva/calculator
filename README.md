@@ -48,12 +48,20 @@ project-root/
 │   ├── index.js           # Application entry point
 │   ├── assets/            # Static assets and images
 │   │   └── themes/        # Theme previews (default.jpg, blue.jpg, retro.jpg, neon.jpg)
-│   ├── components/        # UI components
-│   │   └── Calculator.js  # Main calculator component
-│   ├── core/              # Calculation logic
-│   │   └── calculate.js
-│   └── themes/            # Theme definitions
-│       └── theme.js
+│   ├── components/               # UI component modules
+│   │   └── Calculator/           # All calculator-related components
+│   │       ├── Buttons.js        # Creates calculator buttons and handles click bindings
+│   │       ├── Calculator.js     # Main calculator container combining all modules
+│   │       ├── Display.js        # Display component for showing input and results
+│   │       ├── Handlers.js       # Input event handlers and state management
+│   │       ├── Helpers.js        # Utility functions (e.g. isNumber, isOperator)
+│   │       ├── ThemeApply.js     # Logic for applying selected theme to document body
+│   │       ├── ThemeMenu.js      # Theme selection menu with preview thumbnails
+│   │       └── WindowButtons.js  # Decorative window control buttons (red/yellow/green + theme button)
+│   ├── core/              
+│   │   └── calculate.js  # Calculation logic
+│   └── themes/            
+│       └── theme.js      # Theme definitions
 │
 ├── .husky/                # Husky pre-commit hooks running ESLint before commit
 ├── .prettierrc            # Prettier configuration
