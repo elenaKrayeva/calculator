@@ -49,7 +49,7 @@ project-root/
 │   ├── assets/            # Static assets and images
 │   │   └── themes/        # Theme previews (default.jpg, blue.jpg, retro.jpg, neon.jpg)
 |   |   └── styles.css     # Main application stylesheet: calculator layout, button styles, and theme switching
-│   ├── components/               # All calculator-related components       
+│   ├── components/               # All calculator-related components
 │   │       ├── Buttons.js        # Creates calculator buttons and handles click bindings
 │   │       ├── Calculator.js     # Main calculator container combining all modules
 │   │       ├── Display.js        # Display component for showing input and results

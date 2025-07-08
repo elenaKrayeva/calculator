@@ -26,7 +26,7 @@ body {
   border-radius: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
   display: grid;
-  grid-template-columns: repeat(4, 80px);
+  grid-template-columns: repeat(10, 80px);
   position: relative;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .display {
-  grid-column: span 4;
+  grid-column: span 10;
   height: 80px;
   font-size: 60px;
   text-align: right;
@@ -91,6 +91,9 @@ button.operator {
 
 button.zero {
   grid-column: span 2;
+}
+
+button.rad {
   border-bottom-left-radius: 20px;
 }
 
