@@ -9,11 +9,13 @@ export function createButtons(container, display) {
     ['Rad', 'sinh', 'cosh', 'tanh', 'π', 'Rand', '0', ',', '='],
   ];
 
-  let operand1 = null;
-  let operator = null;
-  let resetNext = false;
-
-  const state = { operand1, operator, resetNext, display };
+  const state = {
+    operand1: null,
+    command: null,
+    resetNext: false,
+    display,
+    memory: null,
+  };
 
   buttons.forEach((row) => {
     row.forEach((text) => {

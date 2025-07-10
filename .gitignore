@@ -5,6 +5,9 @@ node_modules/
 /dist
 /build
 
+# Test coverage
+/coverage/
+
 # System files
 .DS_Store
 Thumbs.db
@@ -44,3 +47,6 @@ Desktop.ini
 # Caches
 .cache
 .vite/
+.eslintcache
+.babel.cache.json
+.prettier-cache/
