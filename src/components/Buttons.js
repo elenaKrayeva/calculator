@@ -1,4 +1,6 @@
-import { handleInput } from './Handlers.js';
+import { handleInput } from './handlers/index.js';
+
+export let state;
 
 export function createButtons(container, display) {
   const buttons = [
@@ -9,12 +11,14 @@ export function createButtons(container, display) {
     ['Rad', 'sinh', 'cosh', 'tanh', 'π', 'Rand', '0', ',', '='],
   ];
 
-  const state = {
+  state = {
     operand1: null,
     command: null,
+    commandKey: null,
     resetNext: false,
     display,
     memory: null,
+    history: [],
   };
 
   buttons.forEach((row) => {

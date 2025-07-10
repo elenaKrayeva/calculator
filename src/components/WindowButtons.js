@@ -1,4 +1,6 @@
 import { openThemeMenu } from './ThemeMenu.js';
+import { state } from './Buttons.js';
+import { handleInput } from './handlers/index.js';
 
 export function createWindowButtons(container) {
   const topBar = document.createElement('div');
@@ -13,13 +15,25 @@ export function createWindowButtons(container) {
     windowButtons.appendChild(circle);
   });
 
+  const buttonBlock = document.createElement('div');
+  buttonBlock.className = 'button-block';
+
   topBar.appendChild(windowButtons);
+  topBar.appendChild(buttonBlock);
+
+  const undoButton = document.createElement('button');
+  undoButton.textContent = 'undo';
+  undoButton.className = 'undo-button';
+  undoButton.addEventListener('click', () => {
+    handleInput('undo', state);
+  });
 
   const themeButton = document.createElement('button');
   themeButton.textContent = '🎨';
   themeButton.className = 'theme-button';
   themeButton.addEventListener('click', () => openThemeMenu(container));
 
-  topBar.appendChild(themeButton);
+  buttonBlock.appendChild(undoButton);
+  buttonBlock.appendChild(themeButton);
   container.appendChild(topBar);
 }

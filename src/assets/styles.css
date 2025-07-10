@@ -33,6 +33,7 @@ body {
 .calculator .window-buttons {
   display: flex;
   gap: 8px;
+  align-self: flex-start;
 }
 
 .calculator .window-buttons div {
@@ -132,6 +133,11 @@ body.theme-neon {
   --button-text-color: #000000;
   --operator-text-color: #000000;
 }
+.button-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
 .theme-button {
   background: transparent;
@@ -139,9 +145,18 @@ body.theme-neon {
   font-size: 20px;
   cursor: pointer;
   color: white;
-  margin-left: 20px;
+  height: 30px;
 }
-
+.undo-button {
+  width: 70px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
 .theme-menu {
   position: absolute;
   top: 50px;

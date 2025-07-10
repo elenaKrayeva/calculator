@@ -3,6 +3,7 @@
 ## Task
 
 Implemented test task: basic calculator built with pure JavaScript and Webpack, without any frameworks.
+[task](https://drive.google.com/file/d/15jVnBPXaZrjs99KOUxp4TGq6Inau6xq_/view)
 
 **Functional requirements:**
 
@@ -67,33 +68,45 @@ npm test
 ```
 project-root/
 │
-├── public/                  # Static HTML file (index.html)
+├── public/                      # Static HTML file (index.html)
 │
-├── src/                     # Application source code
-│   ├── index.js             # Application entry point
-│   ├── __tests__/           # Unit tests using Jest
-│   │   └── commands.test.js # Tests for all mathematical operations
-│   ├── assets/              # Static assets and images
-│   │   ├── styles.css       # Main app styles: layout, button styles, theme switching
-│   │   └── themes/          # Theme previews (default.jpg, blue.jpg, retro.jpg, neon.jpg)
-│   ├── components/          # Calculator components
-│   │   ├── Buttons.js       # Button creation and input binding
-│   │   ├── Calculator.js    # Root calculator component
-│   │   ├── Display.js       # Display for input/output
-│   │   ├── Handlers.js      # Input handlers and command execution
-│   │   ├── Helpers.js       # Utility helpers (e.g., isNumber, isOperator)
-│   │   ├── ThemeApply.js    # Applies selected theme to document
-│   │   ├── ThemeMenu.js     # Theme menu with previews
-│   │   └── WindowButtons.js # UI decoration: window controls and theme switch
-│   ├── core/
-│   │   └── commands.js      # Math logic: all commands using Command pattern
+├── src/                         # Application source code
+│   ├── index.js                 # Application entry point
+│   ├── __tests__/               # Unit tests using Jest
+│   │   └── commands.test.js     # Tests for all mathematical operations
+│   ├── assets/                  # Static assets and images
+│   │   ├── styles.css           # Main app styles: layout, button styles, theme switching
+│   │   └── themes/              # Theme previews (default.jpg, blue.jpg, retro.jpg, neon.jpg)
+│   ├── components/              # Calculator components
+│   │   ├── Buttons.js           # Button creation and input binding
+│   │   ├── Calculator.js        # Root calculator component
+│   │   ├── Display.js           # Display for input/output
+│   │   ├── Helpers.js           # Utility helpers (e.g., isNumber)
+│   │   ├── ThemeApply.js        # Applies selected theme to document
+│   │   ├── ThemeMenu.js         # Theme menu with previews
+│   │   ├── WindowButtons.js     # UI decoration: window controls and theme switch
+│   │   └── handlers/            # All input-handling logic split by concern
+│   │       ├── index.js         # Export of the main function handleInput
+│   │       ├── number.js        # handleNumber
+│   │       ├── operator.js      # handleOperator
+│   │       ├── equal.js         # handleEqual
+│   │       ├── function.js      # handleFunction (unary functions)
+│   │       ├── memory.js        # memoryHandlers (mc, mr, m+, m-)
+│   │       ├── clear.js         # handleClear (AC)
+│   │       ├── sign.js          # handleSignChange (⁺/₋)
+│   │       ├── percent.js       # handlePercent (%)
+│   │       ├── undo.js          # handleUndo (undo)
+│   │       ├── snapshot.js      # createSnapshot (for undo)
+│   │       └── format.js        # formatResult
+│   ├── core/                    # Core calculation logic
+│   │   └── commands.js          # Math commands (Command-pattern)
 │   └── themes/
-│       └── theme.js         # Theme definitions
+│       └── theme.js             # Theme definitions
 │
-├── .husky/                  # Husky hooks (pre-commit lint checks)
-├── .prettierrc              # Prettier configuration
-├── eslint.config.js         # ESLint flat config
-├── package.json             # Project configuration and scripts
-├── webpack.config.js        # Webpack config
-└── README.md                # Project documentation
+├── .husky/                      # Husky hooks (pre-commit lint checks)
+├── .prettierrc                  # Prettier configuration
+├── eslint.config.js             # ESLint flat config
+├── package.json                 # Project configuration and scripts
+├── webpack.config.js            # Webpack config
+└── README.md                    # Project documentation
 ```

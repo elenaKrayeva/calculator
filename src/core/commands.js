@@ -41,9 +41,9 @@ function sqrt(x) {
 export const binaryCommands = {
   '+': add,
   '-': subtract,
-  'х': multiply,
+  х: multiply,
   '÷': divide,
-  'xʸ': power,
+  xʸ: power,
   'ʸ√x': nthRoot,
 };
 
@@ -53,7 +53,7 @@ export const functionCommands = {
   '1/x': (x) => divide('1', x),
   '²√x': (x) => sqrt(x),
   '³√x': (x) => nthRoot(x, '3'),
-  'xʸ': (x, y) => power(x, y),
+  xʸ: (x, y) => power(x, y),
   'ʸ√x': (x, y) => nthRoot(x, y),
   '10ˣ': (x) => power('10', x),
   'x!': (x) => factorial(x),
